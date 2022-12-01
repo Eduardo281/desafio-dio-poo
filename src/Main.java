@@ -4,9 +4,12 @@ import br.com.dio.desafio.dominio.Dev;
 import br.com.dio.desafio.dominio.Link;
 import br.com.dio.desafio.dominio.Mensagem;
 import br.com.dio.desafio.dominio.Mentoria;
+import br.com.dio.desafio.dominio.Pergunta;
 
 import java.time.LocalDate;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.Set;
 
 public class Main {
@@ -81,5 +84,20 @@ public class Main {
         mensagem.setAssuntos(assuntoMsg);
 
         System.out.println(mensagem);
+        System.out.println();
+
+        Pergunta pergunta = new Pergunta();
+        Set<String> assuntoPergunta = new HashSet<>();
+        assuntoPergunta.add("Java");
+        pergunta.setAssuntos(assuntoPergunta);
+        pergunta.setEnunciado("Qual das seguintes linhas de código imprime a mensagem \"Hello, World\" em Java?");
+        Map<Integer, String> alternativas = new LinkedHashMap<>();
+        alternativas.put(1, "print(\"Hello, World\")");
+        alternativas.put(2, "IO.puts(\"Hello, World\")");
+        alternativas.put(3, "System.out.println(\"Hello, World\");");
+        alternativas.put(4, "std::cout << \"Hello, World\" << std::endl;");
+        pergunta.setAlternativas(alternativas);
+        pergunta.setAlternativaCorreta(3);
+        System.out.println(pergunta);
     }
 }
