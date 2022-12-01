@@ -14,6 +14,7 @@ public class Bootcamp {
     private Set<Dev> devsInscritos = new HashSet<>();
     private Set<Conteudo> conteudos = new LinkedHashSet<>();
     private Set<Link> linksUteis = new HashSet<>();
+    private Forum forum = new Forum();
 
     public String getNome() {
         return nome;
@@ -62,6 +63,15 @@ public class Bootcamp {
     public void setLinksUteis(Set<Link> linksUteis) {
         this.linksUteis = linksUteis;
     }
+
+    public Forum getForum() {
+        return forum;
+    }
+
+    public void setForum(Forum forum) {
+        this.forum = forum;
+    }
+
 
     @Override
     public boolean equals(Object o) {
