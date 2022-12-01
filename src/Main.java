@@ -2,10 +2,13 @@ import br.com.dio.desafio.dominio.Bootcamp;
 import br.com.dio.desafio.dominio.Curso;
 import br.com.dio.desafio.dominio.Dev;
 import br.com.dio.desafio.dominio.Link;
+import br.com.dio.desafio.dominio.Mensagem;
 import br.com.dio.desafio.dominio.Mentoria;
 
 import java.net.URL;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
@@ -67,5 +70,17 @@ public class Main {
             System.out.println(link);
             System.out.println();
         }
+
+        Mensagem mensagem = new Mensagem();
+        mensagem.setAutor(devJoao);
+        mensagem.setTitulo("Qual é uma boa IDE para Java?");
+        mensagem.setConteudo("Estou começando a estudar desenvolvimento Java e gostaria de indicações de uma boa IDE para trabalhar com esta linguagem. Agradeço desde já!");
+        Set<String> assuntoMsg = new HashSet<>();
+        assuntoMsg.add("Java");
+        assuntoMsg.add("IDE");
+        assuntoMsg.add("Linguagens de Programação");
+        mensagem.setAssuntos(assuntoMsg);
+
+        System.out.println(mensagem);
     }
 }
