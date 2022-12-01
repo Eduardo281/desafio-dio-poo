@@ -5,7 +5,6 @@ import br.com.dio.desafio.dominio.Link;
 import br.com.dio.desafio.dominio.Mensagem;
 import br.com.dio.desafio.dominio.Mentoria;
 
-import java.net.URL;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
