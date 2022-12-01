@@ -2,10 +2,11 @@ import br.com.dio.desafio.dominio.Bootcamp;
 import br.com.dio.desafio.dominio.Curso;
 import br.com.dio.desafio.dominio.Dev;
 import br.com.dio.desafio.dominio.Link;
-import br.com.dio.desafio.dominio.Mensagem;
 import br.com.dio.desafio.dominio.Mentoria;
 import br.com.dio.desafio.dominio.Pergunta;
+import br.com.dio.desafio.dominio.Postagem;
 import br.com.dio.desafio.dominio.Quiz;
+import br.com.dio.desafio.dominio.Resposta;
 
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -74,17 +75,33 @@ public class Main {
             System.out.println();
         }
 
-        Mensagem mensagem = new Mensagem();
-        mensagem.setAutor(devJoao);
-        mensagem.setTitulo("Qual é uma boa IDE para Java?");
-        mensagem.setConteudo("Estou começando a estudar desenvolvimento Java e gostaria de indicações de uma boa IDE para trabalhar com esta linguagem. Agradeço desde já!");
+        Postagem postagem = new Postagem();
+        postagem.setAutor(devJoao);
+        postagem.setTitulo("Qual é uma boa IDE para Java?");
+        postagem.setConteudo("Estou começando a estudar desenvolvimento Java e gostaria de indicações de uma boa IDE para trabalhar com esta linguagem. Agradeço desde já!");
         Set<String> assuntoMsg = new HashSet<>();
         assuntoMsg.add("Java");
         assuntoMsg.add("IDE");
         assuntoMsg.add("Linguagens de Programação");
-        mensagem.setAssuntos(assuntoMsg);
+        postagem.setAssuntos(assuntoMsg);
+        bootcamp.getForum().getPostagens().add(postagem);
 
-        System.out.println(mensagem);
+        System.out.println(postagem);
+        System.out.println();
+
+        Resposta resposta = new Resposta();
+        resposta.setAutor(devCamila);
+        resposta.setConteudo("Eu uso o IntelliJ no meu dia a dia e super recomendo! É uma ótima IDE com diversas funcionalidades extremamente úteis para o desenvolvimento em Java. Facilita muito o meu trabalho e me ajuda a ter o máximo de produtividade!");
+        resposta.setPostagemAssociada(postagem);
+        resposta.receberLike();
+
+        System.out.println(resposta);
+        System.out.println();
+
+        for (Postagem p : bootcamp.getForum().getPostagens()) {
+            System.out.println(p);
+        }
+        System.out.println("+++---+++---+++---+++---");
         System.out.println();
 
         Pergunta pergunta1 = new Pergunta();
