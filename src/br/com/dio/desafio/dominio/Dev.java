@@ -80,7 +80,7 @@ public class Dev {
         return "Dev{" +
                 "name='" + getNome() + '\'' +
                 ", conteudosInscritos='" + getConteudosInscritos() + '\'' +
-                ", conteudosConcluidos=" + getConteudosConcluidos() +
+                ", conteudosConcluidos=" + getConteudosConcluidos() + '\'' +
                 '}';
     }
 }
