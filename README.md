@@ -18,4 +18,4 @@ Assim, em resumo, dentro do contexto do código desenvolvido incluímos:
 - Super Classe Mensagem, utilizada para a definição das postagens dentro do ambiente do Forum, as quais podem ser dos tipos Postagem ou Resposta, realizando-se as devidas relações entre as entidades através de composição;
 - Classe Link para a inclusão de referências externas dentro do ambiente do Bootcamp.
 
-Maiores informações e o código base utilizado para o desenvolvido do projeto podem ser encontrados [clicando aqui](https://www.linkedin.com/in/cami-la/).
+Maiores informações e o código base utilizado para o desenvolvido do projeto podem ser encontrados [clicando aqui](https://github.com/cami-la/desafio-poo-dio).
