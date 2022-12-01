@@ -5,6 +5,7 @@ import br.com.dio.desafio.dominio.Link;
 import br.com.dio.desafio.dominio.Mensagem;
 import br.com.dio.desafio.dominio.Mentoria;
 import br.com.dio.desafio.dominio.Pergunta;
+import br.com.dio.desafio.dominio.Quiz;
 
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -86,18 +87,63 @@ public class Main {
         System.out.println(mensagem);
         System.out.println();
 
-        Pergunta pergunta = new Pergunta();
-        Set<String> assuntoPergunta = new HashSet<>();
-        assuntoPergunta.add("Java");
-        pergunta.setAssuntos(assuntoPergunta);
-        pergunta.setEnunciado("Qual das seguintes linhas de código imprime a mensagem \"Hello, World\" em Java?");
-        Map<Integer, String> alternativas = new LinkedHashMap<>();
-        alternativas.put(1, "print(\"Hello, World\")");
-        alternativas.put(2, "IO.puts(\"Hello, World\")");
-        alternativas.put(3, "System.out.println(\"Hello, World\");");
-        alternativas.put(4, "std::cout << \"Hello, World\" << std::endl;");
-        pergunta.setAlternativas(alternativas);
-        pergunta.setAlternativaCorreta(3);
-        System.out.println(pergunta);
+        Pergunta pergunta1 = new Pergunta();
+        Set<String> assuntoPergunta1 = new HashSet<>();
+        assuntoPergunta1.add("Java");
+        pergunta1.setAssuntos(assuntoPergunta1);
+        pergunta1.setEnunciado("Qual das seguintes linhas de código imprime a mensagem \"Hello, World\" em Java?");
+        Map<Integer, String> alternativasPergunta1 = new LinkedHashMap<>();
+        alternativasPergunta1.put(1, "print(\"Hello, World\")");
+        alternativasPergunta1.put(2, "IO.puts(\"Hello, World\")");
+        alternativasPergunta1.put(3, "System.out.println(\"Hello, World\");");
+        alternativasPergunta1.put(4, "std::cout << \"Hello, World\" << std::endl;");
+        pergunta1.setAlternativas(alternativasPergunta1);
+        pergunta1.setAlternativaCorreta(3);
+        System.out.println(pergunta1);
+        System.out.println();
+
+        Pergunta pergunta2 = new Pergunta();
+        Set<String> assuntoPergunta2 = new HashSet<>();
+        assuntoPergunta2.add("Java");
+        pergunta2.setAssuntos(assuntoPergunta2);
+        pergunta2.setEnunciado("Qual das alternativas abaixo não representa um tipo numérico em Java");
+        Map<Integer, String> alternativasPergunta2 = new LinkedHashMap<>();
+        alternativasPergunta2.put(1, "int");
+        alternativasPergunta2.put(2, "float");
+        alternativasPergunta2.put(3, "String");
+        alternativasPergunta2.put(4, "double");
+        pergunta2.setAlternativas(alternativasPergunta2);
+        pergunta2.setAlternativaCorreta(3);
+        System.out.println(pergunta2);
+        System.out.println();
+
+        Pergunta pergunta3 = new Pergunta();
+        Set<String> assuntoPergunta3 = new HashSet<>();
+        assuntoPergunta3.add("IDE");
+        pergunta3.setAssuntos(assuntoPergunta3);
+        pergunta3.setEnunciado("Dadas as alternativas\n1 - VS Code;\n2 - IntelliJ;\n3 - Eclipse;\n"+
+        "Quais representam editores de código com suporte à linguagem Java?");
+        Map<Integer, String> alternativasPergunta3 = new LinkedHashMap<>();
+        alternativasPergunta3.put(1, "Apenas 1 e 3");
+        alternativasPergunta3.put(2, "Apenas 1 e 2");
+        alternativasPergunta3.put(3, "Apenas 2 e 3");
+        alternativasPergunta3.put(4, "Todas as três opções");
+        pergunta3.setAlternativas(alternativasPergunta3);
+        pergunta3.setAlternativaCorreta(4);
+        System.out.println(pergunta3);
+        System.out.println();
+
+        System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
+        Quiz quiz = new Quiz();
+        Set<String> assuntosQuiz = new HashSet<>();
+        assuntosQuiz.add("Java");
+        assuntosQuiz.add("IDE");
+        Set<Pergunta> perguntasQuiz = new HashSet<>();
+        perguntasQuiz.add(pergunta1);
+        perguntasQuiz.add(pergunta2);
+        perguntasQuiz.add(pergunta3);
+        quiz.setAssuntos(assuntosQuiz);
+        quiz.setPerguntas(perguntasQuiz);
+        System.out.println(quiz);
     }
 }
