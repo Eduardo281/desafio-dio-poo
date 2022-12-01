@@ -64,8 +64,7 @@ public class Main {
         bootcamp.getLinksUteis().add(linkJava);
         
         for (Link link : bootcamp.getLinksUteis()) {
-            System.out.println(link.getTitulo());
-            System.out.println(link.getUrl());
+            System.out.println(link);
             System.out.println();
         }
     }
