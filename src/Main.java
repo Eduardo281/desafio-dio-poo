@@ -1,8 +1,10 @@
 import br.com.dio.desafio.dominio.Bootcamp;
 import br.com.dio.desafio.dominio.Curso;
 import br.com.dio.desafio.dominio.Dev;
+import br.com.dio.desafio.dominio.Link;
 import br.com.dio.desafio.dominio.Mentoria;
 
+import java.net.URL;
 import java.time.LocalDate;
 
 public class Main {
@@ -53,7 +55,18 @@ public class Main {
         System.out.println("Conteúdos Inscritos João:" + devJoao.getConteudosInscritos());
         System.out.println("Conteúdos Concluidos João:" + devJoao.getConteudosConcluidos());
         System.out.println("XP:" + devJoao.calcularTotalXp());
+        System.out.println();
 
+        Link linkJava = new Link();
+        linkJava.setTitulo("Site oficial Java pt-br");
+        linkJava.setUrl("https://www.java.com/pt-BR/");
+        
+        bootcamp.getLinksUteis().add(linkJava);
+        
+        for (Link link : bootcamp.getLinksUteis()) {
+            System.out.println(link.getTitulo());
+            System.out.println(link.getUrl());
+            System.out.println();
+        }
     }
-
 }
